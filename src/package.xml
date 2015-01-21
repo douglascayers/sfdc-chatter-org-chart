@@ -11,12 +11,12 @@
     </types>
     <types>
         <members>ChatterOrgChartPage</members>
-        <members>ChatterOrgChartUserProfileTabPage</members>
+        <members>ChatterOrgChartPage</members>
         <name>ApexPage</name>
     </types>
     <types>
         <members>Chatter_Org_Chart</members>
         <name>CustomTab</name>
     </types>
-    <version>31.0</version>
+    <version>32.0</version>
 </Package>
