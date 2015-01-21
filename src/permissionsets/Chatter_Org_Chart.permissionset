@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <classAccesses>
+        <apexClass>ChatterOrgChartController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ChatterOrgChartControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <description>Grants users access to the visualforce page, apex controller class, and Org Chart tab (object settings).</description>
+    <label>Chatter Org Chart</label>
+    <pageAccesses>
+        <apexPage>ChatterOrgChartPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <tabSettings>
+        <tab>Chatter_Org_Chart</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <userLicense>Salesforce</userLicense>
+</PermissionSet>
