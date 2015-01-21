@@ -9,11 +9,14 @@ This new profile tab leverages the hierarchical relationship of the **manager** 
 
 Setup
 =====
-1. Deploy the metadata in this repo (see quick instructions below)
+1. Deploy the metadata in this repo (see deployment instructions below)
 2. Grant appropriate profiles and/or permission sets access to the visualforce page and apex controller class
-3. Add the 'Org Chart' profile tab to Chatter by going to Setup | Create | Apps
-4. Edit both the Subtab Apps **Profile (Others)** and **Profile (self)** to assign the **Org Chart** tab
-5. Go view a chatter user's profile and click the new Org Chart tab, enjoy!
+[screenshot](/images/chatter-org-chart-profile-settings.png)
+3. Grant appropriate profiles visibility to the 'Org Chart' tab (under Object Settings)
+[screenshot](/images/chatter-org-chart-tab-visibility.png)
+4. Add the 'Org Chart' profile tab to Chatter by going to Setup | Create | Apps
+5. Edit both the Subtab Apps **Profile (Others)** and **Profile (self)** to assign the **Org Chart** tab
+6. Go view a chatter user's profile and click the new Org Chart tab, enjoy!
 
 Deployment: How To
 ==================
