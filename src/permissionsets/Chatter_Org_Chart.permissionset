@@ -18,5 +18,4 @@
         <tab>Chatter_Org_Chart</tab>
         <visibility>Visible</visibility>
     </tabSettings>
-    <userLicense>Salesforce</userLicense>
 </PermissionSet>
