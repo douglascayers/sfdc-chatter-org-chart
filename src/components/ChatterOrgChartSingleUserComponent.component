@@ -1,0 +1,17 @@
+<apex:component >
+    
+    <apex:attribute name="user" description="The user profile card to display"
+                    type="User" required="true"/>
+    
+    <apex:attribute name="highlight" description="Apply styling to emphasize this user profile card"
+                    type="Boolean" required="false" default="false"/>
+    
+    <div class="list-group">
+        <a href="/_ui/core/userprofile/UserProfilePage?u={!user.id}&tab=Chatter_Org_Chart" target="_top" class="list-group-item {!IF(highlight, 'list-group-item-info', '')}">
+            <img src="{!user.smallPhotoURL}" class="img-circle" width="64px" height="64px"/>
+            <p class="user-name"><apex:outputText value="{!user.name}"/></p>
+            <p class="user-title"><apex:outputText value="{!user.title}"/></p>
+        </a>
+    </div>
+    
+</apex:component>

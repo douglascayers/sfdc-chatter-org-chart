@@ -1,0 +1,137 @@
+<apex:page standardController="User"
+           extensions="ChatterOrgChartController"
+           docType="html-5.0"
+           showHeader="false" showChat="false" standardStylesheets="false" sidebar="false"
+           applyBodyTag="false" applyHtmlTag="false">
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css"/>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+        <style>
+            /* http://stackoverflow.com/questions/23431970/bootstrap-3-truncate-long-text-inside-rows-of-a-table-in-a-responsive-way */
+            .user-name {
+            	font-weight: bold;
+            	padding-top:10px;
+            }
+            .user-name,
+            .user-title {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xs-12 text-center"> &nbsp; </div>
+            </div>
+
+            <!-- BEGIN Manager -->
+
+            <apex:outputPanel rendered="{!chatterUser.manager != null}">
+
+                <div class="row">
+
+                    <!-- Put empty divs around so single user displays in center -->
+
+                    <div class="col-xs-4 text-center"> &nbsp; </div>
+
+                    <div class="col-xs-4 text-center">
+                        <c:ChatterOrgChartSingleUserComponent user="{!chatterUser.manager}"/>
+                    </div>
+
+                    <div class="col-xs-4 text-center"> &nbsp; </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <span class="glyphicon glyphicon-chevron-up" style="font-size:2em"></span>
+                    </div>
+                </div>
+
+            </apex:outputPanel>
+
+            <!-- END Manager -->
+
+            <!-- BEGIN User -->
+
+            <div class="row">
+
+                <!-- Put empty divs around so single user displays in center -->
+
+                <div class="col-xs-4 text-center"> &nbsp; </div>
+
+                <div class="col-xs-4 text-center">
+                    <c:ChatterOrgChartSingleUserComponent user="{!chatterUser}" highlight="true"/>
+                </div>
+
+                <div class="col-xs-4 text-center"> &nbsp; </div>
+
+            </div>
+
+            <!-- END User -->
+
+            <!-- BEGIN Direct Reports -->
+
+            <apex:outputPanel rendered="{!chatterUser.ManagedUsers != null && chatterUser.ManagedUsers.size > 0}">
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <span class="glyphicon glyphicon-chevron-down" style="font-size:2em"></span>
+                    </div>
+                </div>
+
+                <!-- Managed Users -->
+
+                <div class="row">
+
+                    <!-- If only one direct report, put empty divs around it so single user displays in center -->
+
+                    <apex:outputPanel rendered="{!chatterUser.ManagedUsers.size == 1}">
+                        <div class="col-xs-4 text-center"> &nbsp; </div>
+                    </apex:outputPanel>
+
+                    <apex:repeat value="{!chatterUser.ManagedUsers}" var="managedUser">
+                        <div class="col-xs-4 text-center">
+                            <c:ChatterOrgChartSingleUserComponent user="{!managedUser}"/>
+                        </div>
+                    </apex:repeat>
+
+                    <apex:outputPanel rendered="{!chatterUser.ManagedUsers.size == 1}">
+                        <div class="col-xs-4 text-center"> &nbsp; </div>
+                    </apex:outputPanel>
+
+                </div>
+
+            </apex:outputPanel>
+
+            <!-- END Direct Reports -->
+
+        </div>
+
+    </body>
+
+</html>
+</apex:page>
