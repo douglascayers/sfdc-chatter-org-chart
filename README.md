@@ -12,7 +12,6 @@ This new profile tab leverages the hierarchical relationship of the **manager** 
 1. Easily deploy the metadata in this repo to your org with one-click (see deployment instructions below)
 2. Assign users the **Chatter Org Chart** permission set
 3. Go to **Setup | Create | Apps** and assign the **Org Chart** profile tab to Chatter for both the Subtab Apps **Profile (Others)** and **Profile (self)**
-![screenshot](/images/chatter-org-chart-subtab-apps.png)
 
 Deployment: How To
 ==================
