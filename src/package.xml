@@ -19,7 +19,7 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>*</members>
+        <members>Chatter_Org_Chart</members>
         <name>PermissionSet</name>
     </types>
     <version>32.0</version>
