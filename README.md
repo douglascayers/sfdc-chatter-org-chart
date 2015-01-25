@@ -5,7 +5,7 @@ Chatter Org Chart is a simple visualforce page designed to be a [custom profile 
 
 This new profile tab leverages the hierarchical relationship of the **manager** field on the user object to display the chatter user's manager, the user, and their direct reports. You can click on the user profile photos to navigate the org chart.
 
-Administrators (users with at least one of these permissions: Manage Users, Manage Internal Users, or Modify All Data) will see a blue pencil-icon in upper-right that they can click to edit basic details, most importantly the Manager field. Administrators can assign a manager to a Chatter Free user, and Chatter Free users can be assigned as managers of other users. No more relying on data loaders or writing your own apex code.
+Administrators (users with at least one of these permissions: Manage Users, Manage Internal Users, or Modify All Data) will see a blue pencil-icon in upper-right that they can click to edit basic details, most importantly the manager field. Administrators can assign a manager to a Chatter Free user, and Chatter Free users can be assigned as managers of other users. No more relying on data loaders or writing your own apex code.
 
 ![screenshot](/images/chatter-org-chart.png)
 
@@ -20,6 +20,8 @@ Change manager by typing a new name with autocomplete results:
 1. Easily deploy the metadata in this repo to your org with one-click (see deployment instructions below)
 2. Assign users the **Chatter Org Chart** permission set
 3. Go to **Setup | Create | Apps** and assign the **Org Chart** profile tab to Chatter for both the Subtab Apps **Profile (Others)** and **Profile (self)**
+
+![screenshot](/images/chatter-org-chart-subtab-apps-1.png)
 
 Deployment: How To
 ==================
