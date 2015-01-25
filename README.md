@@ -12,10 +12,6 @@ This new profile tab leverages the hierarchical relationship of the **manager** 
 
 Administrators (users with at least one of these permissions: Manage Users, Manage Internal Users, or Modify All Data) will see a blue pencil-icon in upper-right that they can click to edit basic details: name, title, and manager.
 
-Chatter Free Users
-==================
-In addition to managing standard user types, administrators can now assign a manager to a **Chatter Free** user, and Chatter Free users can be assigned as managers of other users. No more relying on data loaders or writing your own apex code! However, at the time of this writing, Chatter Free users don't have access to visualforce and apex and sadly won't be able to interact with this Org Chart. Please vote for this idea https://success.salesforce.com/ideaView?id=08730000000l2gMAAQ.
-
 ![screenshot](/images/chatter-org-chart.png)
 
 Click the blue pencil-icon in upper-right to pull up basic edit screen:
@@ -31,6 +27,10 @@ Installation
 3. Go to **Setup | Create | Apps** and assign the **Org Chart** profile tab to Chatter for both the Subtab Apps **Profile (Others)** and **Profile (self)**
 
 ![screenshot](/images/chatter-org-chart-subtab-apps-1.png)
+
+Chatter Free Users
+==================
+In addition to managing standard user types, administrators can now assign a manager to a **Chatter Free** user, and Chatter Free users can be assigned as managers of other users. No more relying on data loaders or writing your own apex code! However, at the time of this writing, Chatter Free users don't have access to visualforce and apex and sadly won't be able to interact with this Org Chart. Please vote for this idea https://success.salesforce.com/ideaView?id=08730000000l2gMAAQ.
 
 Contributors
 ============
