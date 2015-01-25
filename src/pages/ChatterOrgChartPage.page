@@ -239,6 +239,12 @@
                         </tr>
                     </table>
 
+                    <p class="text-right">
+                        <a href="/{!chatterUser.id}/e?retURL={!URLENCODE('/_ui/core/userprofile/UserProfilePage?u=' + chatterUser.id + '&tab=Chatter_Org_Chart')}" target="_top">
+                            Advanced Edit
+                        </a>
+                    </p>
+
                 </div>
 
                 <div class="modal-footer">
