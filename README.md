@@ -9,7 +9,7 @@ This new profile tab leverages the hierarchical relationship of the **manager** 
 
 ![screenshot](/images/chatter-org-chart-edit-user.png)
 
-![screenshot](/images/chatter-org-chart-edit-manager.pnpg)
+![screenshot](/images/chatter-org-chart-edit-manager.png)
 
 3 Step Setup
 ============
