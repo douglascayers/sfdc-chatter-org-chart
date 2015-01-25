@@ -1,10 +1,10 @@
+Chatter Org Chart
+=================
+
 <a href="https://githubsfdeploy.herokuapp.com?owner=douglascayers&repo=sfdc-chatter-org-chart">
   <img alt="Deploy to Salesforce"
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/src/main/webapp/resources/img/deploy.png">
 </a>
-
-Chatter Org Chart
-=================
 
 Chatter Org Chart is a simple visualforce page designed to be a [custom profile tab](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/salesforce_profile_customtabdef.htm) on the [subtab apps](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/dev_subtab_def.htm) **Profile (Self)** and **Profile (Others)**.
 
