@@ -1,11 +1,19 @@
 Overview
 ========
 
-Chatter Org Chart is a simple visualforce page designed with [bootstrap](http://getbootstrap.com/) to be a [custom profile tab](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/salesforce_profile_customtabdef.htm) on the [subtab apps](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/dev_subtab_def.htm) **Profile (Self)** and **Profile (Others)**.
+Chatter Org Chart is a simple visualforce page designed to be a [custom profile tab](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/salesforce_profile_customtabdef.htm) on the [subtab apps](https://developer.salesforce.com/docs/atlas.en-us.salesforce_profile_tabs_cheatsheet.meta/salesforce_profile_tabs_cheatsheet/dev_subtab_def.htm) **Profile (Self)** and **Profile (Others)**.
 
-This new profile tab leverages the hierarchical relationship of the **manager** field on the user object to display the chatter user's manager, the user, and their direct reports. You can click on the user profile cards to navigate the org chart.
+This new profile tab leverages the hierarchical relationship of the **manager** field on the user object to display the chatter user's manager, the user, and their direct reports. You can click on the user profile photos to navigate the org chart.
+
+Administrators (users with at least one of these permissions: Manage Users, Manage Internal Users, or Modify All Data) will see a blue pencil-icon in upper-right that they can click to edit basic details, most importantly the Manager field. Administrators can assign a manager to a Chatter Free user, and Chatter Free users can be assigned as managers of other users. No more relying on data loaders or writing your own apex code.
 
 ![screenshot](/images/chatter-org-chart.png)
+
+Click the pencil-icon to pull up basic edit screen:
+![screenshot](/images/chatter-org-chart-edit-user.png)
+
+Change manager by typing a new name with autocomplete results:
+![screenshot](/images/chatter-org-chart-edit-manager.png)
 
 3 Step Setup
 ============
