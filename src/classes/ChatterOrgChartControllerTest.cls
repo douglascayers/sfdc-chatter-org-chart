@@ -6,52 +6,57 @@ private class ChatterOrgChartControllerTest {
 
         User manager = null;
         User chatterUser = null;
-		User directReport = null;
+        User directReport = null;
 
-		Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User'];
+        Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User'];
 
         System.runAs( new User( id = UserInfo.getUserId() ) ) {
-	 String orgId = UserInfo.getOrganizationId();
-    	 String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
-	 Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
-	 String uniqueName = orgId + dateString + randomInt;
+
+            // Avoid duplicate username error
+            // https://github.com/DouglasCAyers/sfdc-chatter-org-chart/pull/4
+            // https://help.salesforce.com/apex/HTViewSolution?urlname=How-to-resolve-DUPLICATE-USERNAME-error-returned-while-performing-a-deployment&language=en_US
+            String orgId = UserInfo.getOrganizationId();
+            String dateString = String.valueof( Datetime.now() ).replace(' ','').replace(':','').replace('-','');
+            Integer randomInt = Integer.valueOf( Math.rint( Math.random() * 1000000 ) );
+            String uniqueName = orgId + dateString + randomInt;
+
             manager = new User(
-            	Alias = 'standt',
-                Email='standarduser@testorg.com',
-                EmailEncodingKey='UTF-8',
-                LastName='Testing',
-                LanguageLocaleKey='en_US',
-				LocaleSidKey='en_US',
+                Alias = 'standt',
+                Email = 'standarduser@testorg.com',
+                EmailEncodingKey = 'UTF-8',
+                LastName = 'Testing',
+                LanguageLocaleKey = 'en_US',
+                LocaleSidKey = 'en_US',
                 ProfileId = p.Id,
-               	TimeZoneSidKey='America/Los_Angeles',
-                UserName= uniqueName+'manager@testorg.com'
+                TimeZoneSidKey = 'America/Los_Angeles',
+                UserName = uniqueName + 'manager@testorg.com'
             );
             insert manager;
 
             chatterUser = new User(
-            	Alias = 'standt',
-                Email='standarduser@testorg.com',
-                EmailEncodingKey='UTF-8',
-                LastName='Testing',
-                LanguageLocaleKey='en_US',
-				LocaleSidKey='en_US',
+                Alias = 'standt',
+                Email = 'standarduser@testorg.com',
+                EmailEncodingKey = 'UTF-8',
+                LastName = 'Testing',
+                LanguageLocaleKey = 'en_US',
+                LocaleSidKey = 'en_US',
                 ProfileId = p.Id,
-               	TimeZoneSidKey='America/Los_Angeles',
-                UserName= uniqueName+'chatteruser@testorg.com',
+                TimeZoneSidKey = 'America/Los_Angeles',
+                UserName = uniqueName + 'chatteruser@testorg.com',
                 managerId = manager.id
             );
             insert chatterUser;
 
             directReport = new User(
-            	Alias = 'standt',
-                Email='standarduser@testorg.com',
-                EmailEncodingKey='UTF-8',
-                LastName='Testing',
-                LanguageLocaleKey='en_US',
-				LocaleSidKey='en_US',
+                Alias = 'standt',
+                Email ='standarduser@testorg.com',
+                EmailEncodingKey = 'UTF-8',
+                LastName = 'Testing',
+                LanguageLocaleKey = 'en_US',
+                LocaleSidKey = 'en_US',
                 ProfileId = p.Id,
-               	TimeZoneSidKey='America/Los_Angeles',
-                UserName= uniqueName+'directReport@testorg.com',
+                TimeZoneSidKey = 'America/Los_Angeles',
+                UserName = uniqueName + 'directReport@testorg.com',
                 managerId = chatterUser.id
             );
             insert directReport;
