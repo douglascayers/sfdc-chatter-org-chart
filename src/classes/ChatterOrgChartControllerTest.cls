@@ -11,7 +11,10 @@ private class ChatterOrgChartControllerTest {
 		Profile p = [SELECT Id FROM Profile WHERE Name = 'Standard User'];
 
         System.runAs( new User( id = UserInfo.getUserId() ) ) {
-
+	 String orgId = UserInfo.getOrganizationId();
+    	 String dateString = String.valueof(Datetime.now()).replace(' ','').replace(':','').replace('-','');
+	 Integer randomInt = Integer.valueOf(math.rint(math.random()*1000000));
+	 String uniqueName = orgId + dateString + randomInt;
             manager = new User(
             	Alias = 'standt',
                 Email='standarduser@testorg.com',
@@ -21,7 +24,7 @@ private class ChatterOrgChartControllerTest {
 				LocaleSidKey='en_US',
                 ProfileId = p.Id,
                	TimeZoneSidKey='America/Los_Angeles',
-                UserName='manager@testorg.com'
+                UserName= uniqueName+'manager@testorg.com'
             );
             insert manager;
 
@@ -34,7 +37,7 @@ private class ChatterOrgChartControllerTest {
 				LocaleSidKey='en_US',
                 ProfileId = p.Id,
                	TimeZoneSidKey='America/Los_Angeles',
-                UserName='chatteruser@testorg.com',
+                UserName= uniqueName+'chatteruser@testorg.com',
                 managerId = manager.id
             );
             insert chatterUser;
@@ -48,7 +51,7 @@ private class ChatterOrgChartControllerTest {
 				LocaleSidKey='en_US',
                 ProfileId = p.Id,
                	TimeZoneSidKey='America/Los_Angeles',
-                UserName='directReport@testorg.com',
+                UserName= uniqueName+'directReport@testorg.com',
                 managerId = chatterUser.id
             );
             insert directReport;
